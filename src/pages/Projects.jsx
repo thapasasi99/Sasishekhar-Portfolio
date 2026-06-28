@@ -30,11 +30,11 @@ const projects = [
       ],
       roadSafetyInspection: {
         title: "Road Safety Inspection — B.P. Highway (Khurkot to Nepalthok Section)",
+        pptFile: "/projects/road-safety-inspection.pptx",
         roadSection: "Khurkot to Nepalthok Section, B.P. Highway",
         inspectionLength: "500 meters",
         instructor: "Dr. Pradeep Shrestha (Subject Teacher, Elective II — Road Safety)",
-        institution:
-          "Kathford Int'l College of Engineering and Management (Affiliated to Tribhuvan University)",
+        institution: "Kathford Int'l College of Engineering and Management (Affiliated to Tribhuvan University)",
         teamMembers: [
           "Sasishekhar Thapa",
           "Sangit Chaulagain",

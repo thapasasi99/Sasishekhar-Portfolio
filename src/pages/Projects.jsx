@@ -28,6 +28,74 @@ const projects = [
         "Identified critical congestion windows to inform signalization strategies",
         "Provided actionable insights for road widening feasibility studies",
       ],
+      roadSafetyInspection: {
+        title: "Road Safety Inspection — B.P. Highway (Khurkot to Nepalthok Section)",
+        roadSection: "Khurkot to Nepalthok Section, B.P. Highway",
+        inspectionLength: "500 meters",
+        instructor: "Dr. Pradeep Shrestha (Subject Teacher, Elective II — Road Safety)",
+        institution:
+          "Kathford Int'l College of Engineering and Management (Affiliated to Tribhuvan University)",
+        teamMembers: [
+          "Sasishekhar Thapa",
+          "Sangit Chaulagain",
+          "Ronisha Saha",
+          "Santosh Bhatta",
+          "Rabindra Tharu",
+          "Santosh Tharu",
+        ],
+        date: "2079-11-19 (B.S.)",
+        reflection:
+          "Today, I revisited my past road safety inspection report. Back then, my critical thinking skills were not as developed as they are now. With more experience and as a teacher of transportation, I have gained a better perspective. During our inspection of the first 500 meters of the road, we identified several issues that contribute to road accidents. These problems, though seemingly minor, have significant impacts.",
+        auditDefinition:
+          "A Road Safety Audit is a systematic review of road designs, layouts, and conditions by a team of experts to identify potential road safety hazards and recommend measures to mitigate or eliminate them.",
+        auditParameters: [
+          "Road geometry and design: road width, lane width, horizontal and vertical alignment, sight distance, and traffic flow characteristics",
+          "Roadside environment: roadside slopes, roadside barriers, and other fixed roadside hazards",
+          "Traffic control devices: location, type, and condition of traffic signals, signs, markings, and other traffic control features",
+          "Pedestrian and cycling facilities: crossings, sidewalks, cycle lanes, and other facilities for non-motorized road users",
+          "Road surface condition: condition of the road surface, pavement markings, and other road features impacting behavior",
+          "Traffic flow and behavior: analysis of traffic flow patterns, speed, and other factors impacting road safety",
+          "Accident data analysis: identification of accident patterns and high-risk locations to inform improvement recommendations",
+        ],
+        issuesFound: [
+          {
+            category: "Road Surface Conditions",
+            problems: [
+              "Road edge breaks along the carriageway",
+              "Road surface cracks causing structural weakness",
+              "Multiple potholes creating vehicle instability hazards",
+              "Potholes with undulations affecting ride quality",
+              "Wave formations on road surface",
+            ],
+          },
+          {
+            category: "Road Crossing",
+            problems: [
+              "Zebra crossings missing at pedestrian crossing points",
+              "General road crossing problems for pedestrians",
+              "No shoulder provided at crossing areas",
+              "Visibility problems for drivers at intersections",
+              "Missing road markings causing directional confusion",
+            ],
+          },
+          {
+            category: "Road Signs & Symbols",
+            problems: [
+              "Missing break lines on road surface",
+              "Unclear and illegible road signs",
+              "Missing sparklines (edge delineation)",
+              "Misplaced road signs not visible to approaching drivers",
+            ],
+          },
+          {
+            category: "Road Sight Conditions",
+            problems: [
+              "Broken delineators reducing night-time guidance",
+              "Structural problems in side drain causing waterlogging and road damage",
+            ],
+          },
+        ],
+      },
     },
   },
   {
@@ -254,14 +322,19 @@ function Projects() {
           <button
             onClick={() => {
               if (showAll) {
-                window.scrollTo({ top: document.getElementById("projects").offsetTop - 80, behavior: "smooth" });
+                window.scrollTo({
+                  top: document.getElementById("projects").offsetTop - 80,
+                  behavior: "smooth",
+                });
               }
               setShowAll(!showAll);
             }}
             className="group flex items-center gap-3 px-8 py-3.5 rounded-full border border-teal-500/50 text-teal-400 font-semibold hover:bg-teal-500 hover:text-slate-900 transition-all duration-300 shadow-[0_0_15px_rgba(45,212,191,0.1)] hover:shadow-[0_0_25px_rgba(45,212,191,0.4)]"
           >
             {showAll ? "See Less" : `See More (${projects.length - INITIAL_COUNT} more)`}
-            <span className={`transition-transform duration-300 ${showAll ? "rotate-180" : "rotate-0"}`}>↓</span>
+            <span className={`transition-transform duration-300 ${showAll ? "rotate-180" : "rotate-0"}`}>
+              ↓
+            </span>
           </button>
         </div>
       </div>

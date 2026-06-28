@@ -2,7 +2,6 @@
 import { useEffect } from "react";
 
 export default function ProjectPopup({ project, onClose }) {
-  // Close on Escape key
   useEffect(() => {
     const handleKey = (e) => {
       if (e.key === "Escape") onClose();
@@ -92,23 +91,36 @@ export default function ProjectPopup({ project, onClose }) {
           {rsi && (
             <div className="mt-2 border-t border-slate-700 pt-6">
 
-              {/* Section Header */}
+              {/* Section Header Card */}
               <div className="bg-slate-800 rounded-xl p-4 mb-5">
-                <h3 className="text-teal-400 font-bold text-base mb-1">
+                <h3 className="text-teal-400 font-bold text-base mb-2">
                   🛣️ {rsi.title}
                 </h3>
-                <p className="text-slate-300 text-xs mb-0.5">
-                  📍 <span className="font-medium">{rsi.roadSection}</span> &nbsp;|&nbsp; Inspection Length: <span className="font-medium">{rsi.inspectionLength}</span>
+                <p className="text-slate-300 text-xs mb-1">
+                  📍 <span className="font-medium">{rsi.roadSection}</span>
+                  &nbsp;|&nbsp; Inspection Length:{" "}
+                  <span className="font-medium">{rsi.inspectionLength}</span>
                 </p>
-                <p className="text-slate-400 text-xs mb-0.5">
+                <p className="text-slate-400 text-xs mb-1">
                   👨‍🏫 {rsi.instructor}
                 </p>
-                <p className="text-slate-400 text-xs mb-0.5">
+                <p className="text-slate-400 text-xs mb-1">
                   🏛️ {rsi.institution}
                 </p>
-                <p className="text-slate-400 text-xs">
+                <p className="text-slate-400 text-xs mb-3">
                   📅 Date: {rsi.date}
                 </p>
+
+                {/* PPT Download Button */}
+                {rsi.pptFile && (
+                  <a
+                    href={rsi.pptFile}
+                    download="Road-Safety-Inspection-BP-Highway.pptx"
+                    className="inline-flex items-center gap-2 px-4 py-2 bg-teal-500 hover:bg-teal-400 text-slate-900 text-xs font-bold rounded-lg transition-colors"
+                  >
+                    📥 Download Inspection Report (PPT)
+                  </a>
+                )}
               </div>
 
               {/* Team Members */}
